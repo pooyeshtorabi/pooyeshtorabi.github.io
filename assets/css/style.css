@@ -1335,7 +1335,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box { border-radius: 30px; }
 
-  .avatar-box img { width: 120px; }
+  .avatar-box img { width: 190px; }
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -1832,6 +1832,38 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar-info { flex-direction: column; }
 
   .avatar-box img { width: 150px; }
+
+/* Avatar styling */
+.avatar-box img {
+  width: 150px;  /* Default width */
+  height: 150px;  /* Default height */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Sidebar styling */
+.sidebar-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* For mobile view (up to 768px width) */
+@media (max-width: 768px) {
+  .sidebar-info {
+      flex-direction: row;
+  }
+
+  /* Avatar image size for mobile */
+  .avatar-box img {
+      width: 60px; /* Adjust image size for mobile */
+      height: 60px;
+  }
+}
+
+
 
   .info-content .name {
     white-space: nowrap;
