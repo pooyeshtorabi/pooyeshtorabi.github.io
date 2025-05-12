@@ -13,7 +13,7 @@ const urlsToCache = [
     '/assets/images/logo.png',
     '/assets/images/logo.svg',
     '/assets/images/icon-photo.png',
-    '/assets/images/my-avatar.png',
+    '/assets/images/my-avatar.webp',
   
 ];
 
