@@ -4,7 +4,15 @@ const urlsToCache = [
   '/index.html',
   '/assets/css/style.css',
   '/assets/js/script.js',
-  '/assets/images/*',
+  '/assets/images/icon-app.svg',
+  '/assets/images/icon-design.svg',
+  '/assets/images/icon-dev.svg',
+  '/assets/images/icon-quote.svg',
+  '/assets/images/logo.png',
+  '/assets/images/logo.svg',
+  '/assets/images/icon-photo.png',
+  '/assets/images/my-avatar.png',
+
 ];
 
 
