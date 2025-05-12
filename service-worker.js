@@ -1,22 +1,25 @@
+
+
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/assets/css/style.css',
-  '/assets/js/script.js',
-  '/assets/images/icon-app.svg',
-  '/assets/images/icon-design.svg',
-  '/assets/images/icon-dev.svg',
-  '/assets/images/icon-quote.svg',
-  '/assets/images/logo.png',
-  '/assets/images/logo.svg',
-  '/assets/images/icon-photo.png',
-  '/assets/images/my-avatar.png',
-
+    '/',
+    '/index.html',
+    '/assets/css/style.css',
+    '/assets/js/script.js',
+    '/assets/images/icon-app.svg',
+    '/assets/images/icon-design.svg',
+    '/assets/images/icon-dev.svg',
+    '/assets/images/icon-quote.svg',
+    '/assets/images/logo.png',
+    '/assets/images/logo.svg',
+    '/assets/images/icon-photo.png',
+    '/assets/images/my-avatar.png',
+  
 ];
 
 
-const CACHE_TTL = 24 * 60 * 60 * 1000;
+const CACHE_TTL = 24 * 60 * 60 * 1000; 
+
 
 
 let cacheTimestamp = Date.now();
@@ -57,18 +60,27 @@ self.addEventListener('fetch', (event) => {
         if (Date.now() - cacheTimestamp > CACHE_TTL) {
           caches.delete(CACHE_NAME).then(() => {
             console.log('Cache expired, deleting...');
-            cacheTimestamp = Date.now();
+            cacheTimestamp = Date.now(); 
             caches.open(CACHE_NAME).then((cache) => {
-              cache.addAll(urlsToCache);
+              cache.addAll(urlsToCache); 
             });
           });
         }
+
 
         if (response) {
           return response;
         }
 
-        return fetch(event.request);
+
+        return fetch(event.request)
+          .then((networkResponse) => {
+
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, networkResponse.clone());
+            });
+            return networkResponse;
+          });
       })
   );
 });
