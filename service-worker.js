@@ -10,9 +10,9 @@ const urlsToCache = [
     '/assets/images/icon-design.svg',
     '/assets/images/icon-dev.svg',
     '/assets/images/icon-quote.svg',
-    '/assets/images/logo.png',
+    '/assets/images/logo.webp',
     '/assets/images/logo.svg',
-    '/assets/images/icon-photo.png',
+    '/assets/images/icon-photo.webp',
     '/assets/images/my-avatar.webp',
   
 ];
